@@ -1,4 +1,7 @@
 <template>
+    <div class="mb-6">
+        <NavBar />
+    </div>
     <div class="container">
         <v-card class="mx-auto" max-width="500" title="User Registration">
             <v-form ref="form" @submit.prevent="onSubmit">
