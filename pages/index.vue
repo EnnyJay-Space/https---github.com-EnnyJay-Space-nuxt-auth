@@ -18,10 +18,10 @@
     </v-container>
 </template>
 
-<script >
-export default {
-    middleware: 'authCheck',
-};
+<script setup >
+definePageMeta({
+  middleware: ["auth-check"]
+})
 </script>
 
 <style lang="scss" scoped></style>

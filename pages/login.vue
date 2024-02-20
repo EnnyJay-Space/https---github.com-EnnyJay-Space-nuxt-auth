@@ -4,7 +4,7 @@
     </div>
     <div class="container">
         <v-card class="mx-auto" max-width="500" title="User Registration">
-            <v-form ref="form" @submit.prevent="onSubmit">
+            <v-form ref="form" @submit.prevent="onSubmit" >
                 <v-container>
                     <v-text-field v-model="first" color="primary" label="First name" variant="underlined"></v-text-field>
 
@@ -29,14 +29,6 @@
                     </v-btn>
                 </v-card-actions>
             </v-form>
-        </v-card>
-        <v-card class="mx-auto mt-9" max-width="500">
-            <div class="mx-6 my-6">
-                <p>First Name: {{ first }}</p>
-                <p>Last Name: {{ last }}</p>
-                <p>Email Address: {{ email }}</p>
-                <p>Terms Accepted: {{ terms }}</p>
-            </div>
         </v-card>
     </div>
 </template>
@@ -71,40 +63,18 @@ export default {
             this.email = '';
             this.password = '';
             this.terms = '';
-            // console.log(localStorage)
+            alert('Logged In Successful, you will be redirected to the home page');
+
             // Redirect to the index page
             this.$router.push('/');
         },
-        // async loginUser(userInfo) {
-        //     // Attempt login...
-        //     // On success, store user data and redirect
-        //     if (loginSuccessful) {
-        //         const formData = {
-        //             first: userInfo.first,
-        //             last: userInfo.last,
-        //             email: userInfo.email,
-        //             password: userInfo.password,
-        //             terms: userInfo.terms,
-        //         };
-        //         localStorage.setItem('formData', JSON.stringify(formData));
-
-        //         // Redirect to the original target route or to a default route
-        //         if (this.redirectUrl) {
-        //             this.$router.push(this.redirectUrl);
-        //             console.log(333, "Redirect")
-        //         } else {
-        //             this.$router.push('/');
-        //             console.log(222)
-        //         }
-        //     }
+       
+        // submitDemoForm() {
+        // // In a real scenario, you might want to send this data to a server for processing
+        // // For demo purposes, you can log the data to the console
+        // console.log('Demo Form Submitted:', this.schoolData);
+        // alert('Demo Form Submitted!');
         // },
-        // setRedirectUrl(toRoute) {
-        //     // Store the full path of the current route if it's not one of the excluded paths
-        //     if (!['/', '/login', '/sign-up'].includes(toRoute.path)) {
-        //         this.redirectUrl = toRoute.fullPath;
-        //     }
-        // }
-
     }
 }
 </script>
