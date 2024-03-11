@@ -23,7 +23,7 @@
                 <v-card-actions>
                     <v-spacer></v-spacer>
 
-                    <v-btn color="success" type="submit" @click="loginUser(userInfo)">
+                    <v-btn color="success" type="submit" @click="loginUser(userInfo)" :disabled="isButtonDisabled">
                         Register
                         <v-icon icon="mdi-chevron-right" end></v-icon>
                     </v-btn>
@@ -75,6 +75,11 @@ export default {
         // console.log('Demo Form Submitted:', this.schoolData);
         // alert('Demo Form Submitted!');
         // },
+    },
+    computed: {
+         isButtonDisabled(){
+             return !(this.first && this.last && this.email && this.password && this.terms)
+         }
     }
 }
 </script>
